@@ -11,17 +11,7 @@
 
 
 1.DECISION TREE:
-                   [Root Node]
-                      |
-          [Feature A = X] / [Feature A = Y]
-               /                \
-    [Leaf Node 1]          [Internal Node]
-                             |      
-                    [Feature B = Z] / [Feature B = W]
-                          /                 \
-                 [Leaf Node 2]        [Leaf Node 3]
-
-A decision tree is a powerful predictive modeling tool used in machine learning and data mining. It's a tree-like structure where each internal node represents a "test" on an attribute (e.g., a feature), each branch represents the outcome of the test, and each leaf node represents a class label or a decision taken after considering all the attributes. Here's an overview of its key aspects:
+              A decision tree is a powerful predictive modeling tool used in machine learning and data mining. It's a tree-like structure where each internal node represents a "test" on an attribute (e.g., a feature), each branch represents the outcome of the test, and each leaf node represents a class label or a decision taken after considering all the attributes. Here's an overview of its key aspects:
 
 Structure: Decision trees are hierarchical structures. The top node is called the root node, and it branches down to the leaf nodes. Each internal node represents a decision based on an attribute, and each leaf node represents a class label or a decision.
 
