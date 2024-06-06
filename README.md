@@ -74,4 +74,48 @@ Applications: SVR finds applications in various fields such as finance (stock pr
 
 Scalability: SVR's computational complexity increases with the size of the dataset, especially when using nonlinear kernel functions. However, for moderately sized datasets, SVR can provide accurate and robust regression models efficiently.
 
+5.K-MEANS:
+  K-means is a popular unsupervised machine learning algorithm used for clustering data into distinct groups based on similarities among data points. It is widely used in various fields such as image processing, data mining, and pattern recognition.
+
+The algorithm works by iteratively partitioning the data into K clusters, where K is predefined by the user. The main objective of K-means is to minimize the variance within each cluster while maximizing the variance between clusters. It achieves this through an iterative process involving the following steps:
+
+Initialization: Randomly select K data points from the dataset as initial cluster centroids.
+
+Assignment: Assign each data point to the nearest centroid, forming K clusters. This step is based on a distance metric, commonly the Euclidean distance.
+
+Update Centroids: Recalculate the centroids of the clusters by taking the mean of all data points assigned to each cluster.
+
+Repeat: Repeat steps 2 and 3 until convergence, i.e., until the centroids no longer change significantly or a specified number of iterations is reached.
+
+Convergence: The algorithm converges when the centroids no longer change significantly between iterations.
+
+K-means is sensitive to the initial selection of centroids, and different initializations can lead to different final cluster assignments. To mitigate this issue, the algorithm is often run multiple times with different initializations, and the result with the lowest objective function value (e.g., total within-cluster variance) is selected.
+
+Despite its popularity and simplicity, K-means has some limitations. It assumes that clusters are spherical and have equal variance, which may not always hold true for real-world datasets. Additionally, the algorithm requires the user to specify the number of clusters (K) beforehand, which can be challenging when the underlying structure of the data is unknown.
+
+Several variations of K-means have been developed to address its limitations. For example, the K-means++ algorithm improves the initialization step by selecting centroids that are distant from each other, leading to faster convergence and better clustering results. Another approach, known as the Mini-batch K-means, is more scalable and efficient for large datasets by updating the centroids using mini-batches of data rather than the entire dataset in each iteration.
+
+6.K-MEDOIDS:
+  K-medoids is a clustering algorithm that, like K-means, partitions a dataset into a predetermined number of clusters. However, unlike K-means, which uses cluster centroids to represent each cluster, K-medoids uses actual data points within the dataset as representatives of the clusters. These representative points are called medoids.
+
+The medoids are selected from the dataset itself, making them robust to outliers and more interpretable than centroids, which may not necessarily correspond to actual data points. K-medoids is particularly useful in situations where the distance metric used for clustering is not suitable for calculating the mean, as is the case with categorical data or data with non-Euclidean distance measures.
+
+The algorithm works as follows:
+
+Initialization: Randomly select K data points from the dataset as initial medoids.
+
+Assignment: Assign each data point to the nearest medoid, forming K clusters. This step is typically based on a distance metric such as Euclidean distance, Manhattan distance, or any other appropriate distance measure.
+
+Update Medoids: For each cluster, compute the total dissimilarity (or distance) between the medoid and all other points in the cluster. Then, select the data point with the lowest total dissimilarity as the new medoid for that cluster.
+
+Repeat: Iterate steps 2 and 3 until convergence, i.e., until the medoids no longer change significantly or a specified number of iterations is reached.
+
+Convergence: The algorithm converges when the medoids no longer change significantly between iterations.
+
+Similar to K-means, K-medoids may also require multiple initializations to find the optimal clustering solution, and the choice of distance metric and the number of clusters (K) must be specified beforehand.
+
+One of the primary advantages of K-medoids over K-means is its robustness to outliers, as medoids are actual data points within the dataset. Additionally, K-medoids is more suitable for datasets with non-Euclidean distance measures or categorical data, where computing the mean (as done in K-means) may not be appropriate.
+
+However, K-medoids can be computationally expensive, especially for large datasets, as it involves updating the medoids, which requires calculating dissimilarities between each data point and the current medoids.
+
 
